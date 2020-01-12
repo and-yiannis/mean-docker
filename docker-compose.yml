@@ -1,12 +1,10 @@
 version: '2'
 
 services:
-  angular: 
-    build: angular-client
-    ports: 
-      - "80:80"
-    #volumes:
-    #    - .angular-client:/app
+  database: 
+    image: mongo
+    ports:
+      - "27017:27017"
 
   express:
     build: express-server
@@ -15,7 +13,11 @@ services:
     links: 
       - database
 
-  database: 
-    image: mongo
-    ports:
-      - "27017:27017"
+
+  angular: 
+    build: angular-client
+    ports: 
+      - "80:80"
+      - "3001:3001"
+    #volumes:
+    #    - .angular-client:/app

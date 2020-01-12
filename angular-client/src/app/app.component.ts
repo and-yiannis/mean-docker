@@ -12,7 +12,8 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit {
   title = 'app works!';
 
-  API = 'http://localhost:3000';
+  //API = 'http://localhost:3000';
+  API = 'http://localhost/api';
 
   people: any[] = [];
 
